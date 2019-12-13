@@ -118,7 +118,7 @@ while true; do
         echo "The following process has been selected"
         echo "$pid $process"
 
-        read -p "Kill it with -9? (Y/n)" answer
+        read -p "Kill it with -9? (Y/n) " answer
         case ${answer:0:1} in
         n|N )
             echo "You skipped. Drink!"
@@ -135,7 +135,7 @@ while true; do
             printf "%s\t%s\n" "$i" "${result[$i]}"
         done
 
-        read -p "Which process to kill? (0-$(( $numberofprocess - 1 )))" answer
+        read -p "Which process to kill? (0-$(( $numberofprocess - 1 ))) " answer
         case ${answer} in
         0|1 )
             pid=$(echo ${result[${answer}]} | awk '{print $1}')
